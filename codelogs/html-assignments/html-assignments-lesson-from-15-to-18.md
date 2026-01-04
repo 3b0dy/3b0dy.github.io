@@ -1,3 +1,8 @@
+## Solve [3] assignments related to [Table, Div]
+
+### Assignments 1
+
+```html
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -67,3 +72,16 @@
     </table>
   </body>
 </html>
+```
+
+### Assignments 2
+
+```html
+
+```
+
+### Assignments 3
+
+```html
+
+```
