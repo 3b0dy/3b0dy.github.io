@@ -77,11 +77,101 @@
 ### Assignments 2
 
 ```html
-
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Table, Div</title>
+  </head>
+  <body>
+    <table border="1" cellspacing="0" cellpadding="20">
+      <caption>
+        Members Points
+      </caption>
+      <thead>
+        <tr>
+          <th scope="col">Date</th>
+          <th scope="col">Name</th>
+          <th scope="col">Points</th>
+        </tr>
+      </thead>
+      <tbody align="center">
+        <tr>
+          <th scope="row" rowspan="4">Month</th>
+          <td>Osama Mohamed</td>
+          <td>100</td>
+        </tr>
+        <tr>
+          <td>Sayed Mohamed</td>
+          <td>100</td>
+        </tr>
+        <tr>
+          <td>Ahmed Mohamed</td>
+          <td>100</td>
+        </tr>
+        <tr>
+          <td>Eman Mohamed</td>
+          <td>100</td>
+        </tr>
+      </tbody>
+    </table>
+  </body>
+</html>
 ```
 
 ### Assignments 3
 
 ```html
-
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Table, Div</title>
+  </head>
+  <body>
+    <table border="1" cellspacing="3" cellpadding="10">
+      <caption>
+        Complex Table
+      </caption>
+      <thead>
+        <tr>
+          <th scope="col">Year</th>
+          <th scope="col">Group</th>
+          <th scope="col">Language</th>
+          <th scope="col">Done</th>
+          <th scope="col">Passed</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <th scope="row" rowspan="5">2022</th>
+          <th rowspan="2">Elzero</th>
+          <td>HTML</td>
+          <td colspan="2">Yes</td>
+        </tr>
+        <tr>
+          <td>CSS</td>
+          <td colspan="2">Yes</td>
+        </tr>
+        <tr>
+          <th rowspan="3">Heroes</th>
+          <td>JS</td>
+          <td>Yes</td>
+          <td>No</td>
+        </tr>
+        <tr>
+          <td>PHP</td>
+          <td colspan="2">Yes</td>
+        </tr>
+        <tr>
+          <td>Python</td>
+          <td>No</td>
+          <td>No</td>
+        </tr>
+      </tbody>
+    </table>
+  </body>
+</html>
 ```
