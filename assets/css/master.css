@@ -1,0 +1,64 @@
+/* Font */
+@import url(../fonts/big-blue-term/big-blue-term.css);
+
+/* Global CSS */
+:root {
+  --blue: #0080ff;
+  --black: #191919;
+  --brown: #603911;
+  --white: #f4f4f4;
+  --off-white: rgba(244, 244, 244, 0.5);
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-family: "BigBlue Terminal";
+  font-size: 10px;
+}
+
+body {
+  background-color: var(--black);
+}
+
+.flex {
+  display: flex;
+}
+
+.flex.center {
+  justify-content: center;
+  align-items: center;
+}
+
+/* Card CSS */
+.card {
+  width: 100%;
+  height: 100svh;
+  flex-flow: column wrap;
+  gap: 10px;
+}
+.card .image {
+  width: 200px;
+}
+.card .image img {
+  width: 100%;
+  border-radius: 25px;
+  border: 5px solid var(--blue);
+}
+.card h1 {
+  font-size: 3.2rem;
+  color: var(--blue);
+}
+.card h1 span {
+  color: var(--white);
+}
+.card p {
+  width: 300px;
+  text-align: center;
+  font-size: 1.6rem;
+  color: var(--off-white);
+}
