@@ -14,6 +14,7 @@
   padding: 0;
   margin: 0;
   font-weight: normal;
+  text-decoration: none;
   box-sizing: border-box;
 }
 
@@ -66,4 +67,14 @@ body {
   text-align: center;
   font-size: 1.6rem;
   color: var(--off-white);
+}
+.card .links {
+  gap: 10px;
+}
+.card .links a {
+  font-size: 1.4rem;
+  color: var(--blue);
+}
+.card .links a:hover {
+  text-decoration: underline;
 }
