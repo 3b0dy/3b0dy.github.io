@@ -13,6 +13,7 @@
 * {
   padding: 0;
   margin: 0;
+  font-weight: normal;
   box-sizing: border-box;
 }
 
@@ -55,6 +56,10 @@ body {
 }
 .card h1 span {
   color: var(--white);
+}
+.card h1 span:last-of-type {
+  font-size: 1.6rem;
+  color: var(--off-white);
 }
 .card p {
   width: 300px;
