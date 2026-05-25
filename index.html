@@ -1,52 +1,46 @@
 <!doctype html>
-<html lang="en">
+<html lang="ar">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="shortcut icon" href="./assets/images/avatar.png" type="image/x-icon" />
-    <title>3b0dy &bullet; Developer</title>
+    <title>عَبُّودي</title>
     <meta name="description" content="Web Developer & Lifelong Learner. Building digital solutions while chasing the best version of myself." />
     <!-- CSS -->
     <link rel="stylesheet" href="./assets/css/master.css" />
   </head>
   <body>
-    <header class="header">
-      <div class="container flex center">
-        <div class="logo flex center">
-          <div class="image">
-            <!--  -->
-          </div>
-          <h1 class="name"><span>3</span>b<span>0</span>dy<span>.dev</span></h1>
-        </div>
-        <nav class="navbar">
-          <input class="navbar-toggle" type="checkbox" />
+    <header class="header flex">
+      <div class="container flex">
+        <h1 class="logo flex">
+          <img class="avatar" src="./assets/images/avatar.png" alt="3b0dy's Avatar" />
+          <span class="name">عَبُّودِي</span>
+        </h1>
+        <nav class="navbar flex">
+          <input type="checkbox" name="nav-menu-toggle" class="nav-menu-toggle flex" />
+          <ul class="nav-menu flex">
+            <li class="nav-menu-link flex"><i></i> <a href="#">الصفحة الرئيسية - Home</a></li>
+            <li class="nav-menu-link flex"><i></i> <a href="#">من أنا؟ - About</a></li>
+            <li class="nav-menu-link flex"><i></i> <a href="#">أعمالي - Portfolio</a></li>
+            <li class="nav-menu-link flex"><i></i> <a href="#">خدماتي - Services</a></li>
+            <li class="nav-menu-link flex"><i>󰍳</i> <a href="#">ماينكرافت - BTA</a></li>
+            <li class="nav-menu-link flex"><i></i> <a href="#">تواصل معي - Contact</a></li>
+          </ul>
         </nav>
       </div>
     </header>
-    <main class="content flex center">
-      <section class="greeting flex center">
-        <div class="container flex center">
-          <div class="image">
-            <img src="./assets/images/avatar.png" alt="3b0dy's Avatar" />
-          </div>
-          <p>Web Developer <br />Lifelong Learner</p>
-          <q>Building digital solutions while chasing the best version of myself</q>
-        </div>
-      </section>
-    </main>
-    <footer class="footer flex center">
-      <div class="container flex center">
-        <p>
-          Made With <span>󰋑</span> by: <a href="/" target="_blank" rel="noopener noreferrer"><span>3</span>b<span>0</span>dy</a>
-        </p>
-        <div class="links flex">
-          <a href="https://github.com/3b0dy" target="_blank" rel="noopener noreferrer">Github<sup></sup></a>
-          <a href="https://t.me/dev3b0dy" target="_blank" rel="noopener noreferrer">Telegram<sup></sup></a>
-        </div>
-      </div>
-    </footer>
-    <!-- <div class="card flex center">
+    <script>
+      // تحديد العناصر التي تستخدم خط Handjet
+      const elements = document.querySelectorAll(".name");
 
-    </div> -->
+      // نطاق اليونيكود الخاص بكل حركات التشكيل العربية (فتحة، ضمة، كسرة، شدة، تنوين..)
+      const diacriticsRegex = /([\u064B-\u0652\u0670])/g;
+
+      elements.forEach((element) => {
+        const originalText = element.innerText;
+        // استبدال التشكيل بـ span ملون
+        element.innerHTML = originalText.replace(diacriticsRegex, '<span class="harakah">$1</span>');
+      });
+    </script>
   </body>
 </html>

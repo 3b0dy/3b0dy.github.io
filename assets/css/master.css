@@ -1,26 +1,26 @@
-/* Font */
-@font-face {
-  font-family: "DepartureMono";
-  src: url(../fonts/DepartureMono/DepartureMonoNerdFont-Regular.otf);
-}
-@font-face {
-  font-family: "UbuntuMono";
-  src: url(../fonts/UbuntuMono/UbuntuMonoNerdFontMono-Regular.ttf);
-}
+/* Fonts */
 @font-face {
   font-family: "0xProto";
   src: url(../fonts/0xProto/0xProtoNerdFontMono-Regular.ttf);
+}
+@font-face {
+  font-family: "IBMPlexSansArabic";
+  src: url(../fonts/IBM_Plex_Sans_Arabic/IBMPlexSansArabic-Regular.ttf);
 }
 
 /* Global CSS */
 :root {
   --blue: #0080ff;
-  --black: #191919;
-  --brown: #603911;
-  --white: #f4f4f4;
+  --black: #141414;
+  --black2: #1c1c1c;
+  --black3: #282828;
+  --white: #ffffff;
+  --white2: #eaeaea;
+  --white3: #a9a9a9;
+  --off-black: #141414;
   --off-white: rgba(244, 244, 244, 0.5);
 
-  --font-name: "0xProto";
+  --font-name: "IBMPlexSansArabic", "0xProto";
 }
 
 * {
@@ -32,153 +32,145 @@
 }
 
 html {
+  direction: rtl;
   font-family: var(--font-name);
-  font-size: 10px;
+  font-size: 62.5%;
 }
 
 body {
-  background-color: var(--black);
+  background-color: var(--black3);
+  color: var(--white);
 }
 
-section {
-  width: 100%;
-  height: 100svh;
+a {
+  color: var(--blue);
+}
+
+ul,
+ol {
+  list-style: none;
 }
 
 .flex {
   display: flex;
-}
-
-.flex.center {
   justify-content: center;
   align-items: center;
 }
 
 .container {
   width: 100%;
-  max-width: 1200px;
+  max-width: 120rem;
   margin: 0 auto;
-  padding: 0 20px;
+  padding: 0 2rem;
 }
 
 /* Header CSS */
 .header {
   width: 100%;
-  padding: 20px 0;
-  height: 70px;
-  position: absolute;
-  top: 0;
-  left: 0;
-  .container {
-    justify-content: space-between;
-  }
-  .logo {
-    .name {
-      font-size: 2.4rem;
-      color: var(--blue);
-      & span {
-        color: var(--white);
-      }
-      & span:last-of-type {
-        font-size: 1.6rem;
-        color: var(--off-white);
-      }
-    }
-  }
-  .navbar {
-    input[type="checkbox"] {
-      appearance: none;
-      width: 3rem;
-      height: 3rem;
-      position: relative;
-      cursor: pointer;
-    }
-    & input[type="checkbox"]::after {
-      content: "󰍜";
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      translate: -50% -50%;
-      font-family: var(--font-name);
-      font-weight: 900;
-      font-size: 3rem;
-      color: var(--blue);
-    }
-    & input[type="checkbox"]:checked::after {
-      content: "󰮫";
-    }
-  }
+  background-color: var(--black);
+  border-bottom: 0.3rem solid var(--blue);
+}
+.header .container {
+  padding: 2rem;
+  justify-content: space-between;
 }
 
-/* Content CSS */
-.content {
-  .greeting {
-    height: calc(100svh - 70px);
-    .container {
-      flex-flow: column wrap;
-      gap: 20px;
-    }
-    .image {
-      width: 200px;
-      img {
-        width: 100%;
-        border-radius: 20px;
-        border: 5px solid var(--blue);
-      }
-    }
-    & p {
-      width: 300px;
-      font-size: 1.8rem;
-      text-align: center;
-      color: var(--off-white);
-    }
-    & q {
-      width: 300px;
-      margin-top: -10px;
-      font-size: 1.3rem;
-      text-align: center;
-      color: var(--white);
-    }
-  }
+/* Logo CSS */
+.header .logo {
+  gap: 1.25rem;
+}
+.header .logo .avatar {
+  width: 3rem;
+  border-radius: 0.3125rem;
+  border: 0.1875rem solid var(--blue);
+}
+.header .logo .name {
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--white);
+}
+.header .logo .name .harakah {
+  font-weight: 700;
+  color: var(--blue);
 }
 
-/* Footer CSS */
-.footer {
-  width: 100%;
-  padding: 20px 0;
-  height: 100px;
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  .container {
+/* Media Breakpoints */
+
+/* Mobile Phones */
+@media (max-width: 30rem) {
+  .header .navbar {
+    flex: 1;
+    justify-content: left;
+  }
+  .header .navbar .nav-menu-toggle {
+    appearance: none;
+    width: 3rem;
+    height: 3rem;
+    /* justify-content: left; */
+    cursor: pointer;
+    perspective: 1000px;
+  }
+  .header .navbar .nav-menu-toggle::after {
+    content: "󰍜";
+    display: inline-block;
+    font-family: var(--font-name);
+    font-size: 4.8rem;
+    color: var(--blue);
+  }
+  .header .navbar .nav-menu-toggle:checked::after {
+    content: "󰮫";
+    transform: scaleX(-1);
+  }
+  .header .navbar .nav-menu {
+    display: flex;
+    visibility: hidden;
+    width: calc(100% - 4rem);
+    margin: 0 2rem;
+    padding: 2rem;
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform: translateY(-8.5rem);
+    align-items: flex-start;
     flex-flow: column wrap;
-    gap: 5px;
-    & p {
-      font-size: 1.6rem;
-      color: var(--white);
-      span {
-        color: var(--blue);
-      }
-      & a {
-        color: var(--blue);
-        span {
-          color: var(--white);
-        }
-      }
-      & a:hover {
-        text-decoration: underline;
-      }
-    }
-    .links {
-      gap: 10px;
-      & a {
-        font-size: 1.2rem;
-        color: var(--blue);
-        & sup {
-          margin-left: 3px;
-          color: var(--off-white);
-        }
-      }
-    }
+    gap: 1rem;
+    background-color: var(--black2);
+    border-bottom: 0.3rem solid var(--blue);
+    z-index: -1;
   }
+  .header .navbar .nav-menu-toggle:checked + .nav-menu {
+    visibility: visible;
+    transform: translateY(7.4rem);
+  }
+  .header .navbar .nav-menu .nav-menu-link {
+    gap: 1rem;
+    font-size: 1.6rem;
+  }
+  .header .navbar .nav-menu .nav-menu-link i {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2.4rem;
+    height: 2rem;
+    font-style: normal;
+  }
+  .header .navbar .nav-menu .nav-menu-link a {
+    text-decoration: underline;
+  }
+}
+
+/* Tablets/iPads */
+@media (min-width: 30.0625rem) and (max-width: 48rem) {
+}
+
+/* Laptops */
+@media (min-width: 48.0625rem) and (max-width: 64rem) {
+}
+
+/* Desktops */
+@media (min-width: 64.0625rem) {
+}
+
+/* Large Screens/TVs */
+@media (min-width: 75.0625rem) {
 }
