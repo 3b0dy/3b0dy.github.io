@@ -94,6 +94,24 @@ ol {
   color: var(--blue);
 }
 
+/* Main CSS */
+.main .banner {
+  width: 100%;
+  padding: 20px;
+  height: 12rem;
+  background: url(../images/3b0dy’s\ BTA.webp) no-repeat top;
+  background-size: cover;
+  border-bottom: 0.3rem solid var(--blue);
+}
+.main .banner::after {
+  content: "الصفحة الرئيسية";
+  font-size: 3.2rem;
+  text-shadow: 0 0 5px var(--black);
+  font-weight: 900;
+  text-decoration: underline;
+
+}
+
 /* Media Breakpoints */
 
 /* Mobile Phones */
@@ -128,7 +146,7 @@ ol {
     margin: 0 2rem;
     padding: 2rem;
     position: absolute;
-    top: 0;
+    top: -0.1rem;
     left: 0;
     transform: translateY(-8.5rem);
     align-items: flex-start;
@@ -136,7 +154,7 @@ ol {
     gap: 1rem;
     background-color: var(--black2);
     border-bottom: 0.3rem solid var(--blue);
-    z-index: -1;
+    z-index: 0;
   }
   .header .navbar .nav-menu-toggle:checked + .nav-menu {
     visibility: visible;
